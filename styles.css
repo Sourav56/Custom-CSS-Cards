@@ -1,0 +1,89 @@
+*, *::before, *::after{
+    font-family: 'Nunito', sans-serif; /* custom font */
+}
+
+.card-grid{
+    display: grid; /* need to learn grid later */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem; /* Gap b/w the grid containers */
+    align-items: flex-start;
+}
+
+.card {
+    background: white;  /* changes the background to white */
+    --padding: 1rem; /* padding is 1rem */
+    border: 1px solid #777; /* border is 1px solid and gray */
+    border-radius: .25rem; /*radius of the border is .25rem around the card*/
+    overflow: hidden;
+}
+
+.card.card-shadow{
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+}
+
+.card-header{
+    font-size: 1.5rem; /* changes the font sizxe to 1.5 rem */
+    margin-bottom: .5rem; /* changes the bottom margin to .5rem */
+    padding: var(--padding);
+    padding-bottom: 0;
+}
+
+.card-header.card-image{
+    overflow:hidden; /* doesn't overflow it's container */
+    padding: 0;
+}
+
+.card-header.card-image > img {
+    display:block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    max-height: 200px; /* max height it can be */
+    object-position: center; /* for the image to get centered as mostly the content is there */
+    transition: 200ms transform ease-in-out; /* animation for the zoom in for below 1/2 */
+}
+
+.card:hover > .card-header.card-image > img {
+    transform: scale(1.025); /* zooms in when hovered 2/2 */
+}
+
+.card-footer{
+    margin-top: 1rem; /* addes margin on the top of 1rem */
+    padding: var(--padding);
+    padding-top: 0;
+}
+
+.card-body{
+    font-size: .9rem; /* changes the font size of the body to .9rem */
+    padding: 0 var(--padding);
+}
+
+.btn{
+    --color: hsl(200, 50%, 50%); /* defining a var called --color so we can use throughout the program */
+    background: var(--color); /* changes the background to --color */
+    border: none; /* no border */
+    color: white; /* changes the font color to white */
+    padding: .5em .75em; /* addes padding */
+    border-radius: .25em; /* changes the border radius */
+    cursor:pointer; /* changes the cursor to a pointing hand to specify when a button is selected */
+}
+
+.btn:hover, .btn:focus{
+    background: hsl(200, 50%, 60%); /* changes the background color to light blue when highlighted */
+}
+
+.btn.btn-outline{
+    background: none; /* transparent background */
+    border: 1px solid var(--color); /* 1px border that is solid and of color light blue that was defined before */
+    color: var(--color); /* changes the text color to light blue */
+}
+
+.btn.btn-outline:hover, .btn.btn-outline:focus{
+     background: hsl(200, 50%, 90%); /* changes the background to a lighter color when highlighted  */
+}
+
+.btn + .btn{
+    margin-left: .25rem; /*Gap b/w the buttons */
+}
+
